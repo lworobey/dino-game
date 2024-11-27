@@ -72,6 +72,7 @@ document.addEventListener('keydown', function (event) {
         score = 0;
         obstacles = [];
         isGameOver = false;
+        gameSpeed = initialSpeed;
         if (!isLoopRunning) {
             isLoopRunning = true;
             requestAnimationFrame(gameLoop);
@@ -84,6 +85,7 @@ document.addEventListener('keydown', function (event) {
     score = 0; // Reset score
     obstacles = []; // Clear existing obstacles
     isGameOver = false; // Reset game over state
+    gameSpeed = initialSpeed;
     trex = {
         x: 50,
         y: 260,
@@ -125,6 +127,7 @@ function duck() {
 }
 
 function update() {
+    console.log(frameCount);
     if (isGameOver) return;
 
     if (frameCount % 60 === 0) {
@@ -228,12 +231,15 @@ function draw() {
 }
 
 function gameLoop() {
-    frameCount++;
+    if (gameStarted) {
+        frameCount++;
+    }
     update();
     draw();
     if (!isGameOver) {
         requestAnimationFrame(gameLoop);
     } else {
         isLoopRunning = false;
+        frameCount = 0;
     }
 }

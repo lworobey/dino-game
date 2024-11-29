@@ -8,7 +8,7 @@ spriteSheet.src = 'sprites.png';
 
 let isLoopRunning = false;
 
-let initialSpeed = 6;
+let initialSpeed = 1;
 let gameSpeed = initialSpeed;
 
 spriteSheet.onload = function () {

@@ -24,7 +24,7 @@ let trex = {
     width: 44,
     height: 47,
     velocityY: 0,
-    gravity: 0.9,
+    gravity: 0.3,
     isJumping: false,
     isDucking: false,
     frame: 0,

@@ -8,7 +8,7 @@ spriteSheet.src = 'sprites.png';
 
 let isLoopRunning = false;
 
-let initialSpeed = 1;
+let initialSpeed = 6;
 let gameSpeed = initialSpeed;
 
 spriteSheet.onload = function () {
@@ -24,7 +24,7 @@ let trex = {
     width: 44,
     height: 47,
     velocityY: 0,
-    gravity: 0.3,
+    gravity: 0.9,
     isJumping: false,
     isDucking: false,
     frame: 0,
@@ -119,7 +119,7 @@ document.addEventListener('touchstart', function () {
 
 function jump() {
     trex.isJumping = true;
-    trex.velocityY = -15; 
+    trex.velocityY = -10; 
 }
 
 function duck() {
@@ -158,7 +158,7 @@ function update() {
     trex.frame = frameCount % 10 === 0 ? (trex.frame === 0 ? 1 : 0) : trex.frame;
 
     // Spawn obstacles only if the game has started
-    if (gameStarted && frameCount % 300 === 0) {
+    if (gameStarted && frameCount % 150 === 0) {
         const obstacleType = ["bird", "cactus", "bigCactus"][Math.floor(Math.random() * 3)];
         let obstacle = {
             x: canvas.width,

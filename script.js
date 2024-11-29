@@ -158,7 +158,7 @@ function update() {
     trex.frame = frameCount % 10 === 0 ? (trex.frame === 0 ? 1 : 0) : trex.frame;
 
     // Spawn obstacles only if the game has started
-    if (gameStarted && frameCount % 150 === 0) {
+    if (gameStarted && frameCount % 300 === 0) {
         const obstacleType = ["bird", "cactus", "bigCactus"][Math.floor(Math.random() * 3)];
         let obstacle = {
             x: canvas.width,

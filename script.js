@@ -119,7 +119,7 @@ document.addEventListener('touchstart', function () {
 
 function jump() {
     trex.isJumping = true;
-    trex.velocityY = -10; 
+    trex.velocityY = -15; 
 }
 
 function duck() {

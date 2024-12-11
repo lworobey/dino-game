@@ -3,12 +3,14 @@ body {
     font-family: Arial, sans-serif;
     overflow: hidden;
 }
+
 canvas {
     display: block;
     margin: 0 auto;
     background-color: #f7f7f7;
     border: 1px solid #ccc;
 }
+
 #gameCanvas {
     border: 1px solid black;
     display: block;
